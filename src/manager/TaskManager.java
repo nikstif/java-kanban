@@ -117,7 +117,7 @@ public class TaskManager {
 
     public boolean updateSubtask(Subtask subtask) {
         Subtask oldSubtask = subtasks.get(subtask.getId());
-        if (oldSubtask != null) {
+        if (oldSubtask != null && subtask.getEpicId() == oldSubtask.getEpicId()) {
             subtasks.put(subtask.getId(), subtask);
             manageEpicStatus(epics.get(subtask.getEpicId()));
             return true;
