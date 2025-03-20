@@ -35,12 +35,12 @@ public class Main {
         System.out.println("Update epic (4)...");
         System.out.println("Get epic by id (4): " + taskManager.getEpicById(4));
 
-        taskManager.updateSubtask(new Subtask(6, "name_SBT2", "desc_SBT2", Status.IN_PROGRESS));
+        taskManager.updateSubtask(new Subtask(6, "name_SBT2", "desc_SBT2", Status.IN_PROGRESS, 4));
         System.out.println("Update subtask (6)...");
         System.out.println("Get subtask by id (6): " + taskManager.getSubtaskById(6));
         System.out.println("Status epic after update subtask: " + taskManager.getEpicById(4));
 
-        taskManager.updateSubtask(new Subtask(7, "name_SBT3", "desc_SBT3", Status.DONE));
+        taskManager.updateSubtask(new Subtask(7, "name_SBT3", "desc_SBT3", Status.DONE, 4));
         System.out.println("Update subtask (7)...");
         System.out.println("Get subtask by id (7): " + taskManager.getSubtaskById(7));
         System.out.println("Status epic after update subtask: " + taskManager.getEpicById(4));
