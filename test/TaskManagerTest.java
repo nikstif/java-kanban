@@ -95,7 +95,7 @@ public class TaskManagerTest {
         manager.createSubtask(new Subtask("subtask1", "desc", Status.NEW, epicId));
         manager.createSubtask(new Subtask("subtask2", "desc", Status.NEW, epicId));
 
-        List<Subtask> subtasks = manager.getAllSubtasksByEpic(epicId);
+        List<Task> subtasks = manager.getAllSubtasksByEpic(epicId);
         assertEquals(2, subtasks.size(), "Должно быть 2 подзадачи у эпика");
     }
 }

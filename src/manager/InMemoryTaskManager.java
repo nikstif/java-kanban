@@ -17,11 +17,11 @@ public class InMemoryTaskManager implements TaskManager {
     private final Map<Integer, Subtask> subtasks;
     private final HistoryManager historyManager;
 
-    public InMemoryTaskManager(HistoryManager historyManager) {
+    public InMemoryTaskManager() {
         this.tasks = new HashMap<>();
         this.epics = new HashMap<>();
         this.subtasks = new HashMap<>();
-        this.historyManager = historyManager;
+        this.historyManager = Managers.getDefaultHistory();
     }
 
     @Override
@@ -183,14 +183,14 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public List<Subtask> getAllSubtasksByEpic(int id) {
+    public List<Task> getAllSubtasksByEpic(int id) {
         Epic epic = epics.get(id);
         if (epic != null) {
-            List<Subtask> allSubtasksByEpic = new ArrayList<>();
+            List<Task> allSubtasksByEpic = new ArrayList<>();
             for (Integer idSubtask : epic.getSubtasksByEpic()) {
                 allSubtasksByEpic.add(subtasks.get(idSubtask));
             }
-            return  allSubtasksByEpic;
+            return allSubtasksByEpic;
         }
         return new ArrayList<>();
     }
