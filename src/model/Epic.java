@@ -28,7 +28,9 @@ public class Epic extends Task {
     }
 
     public void addSubtaskToEpic(Integer id) {
-        subtasksByEpic.add(id);
+        if (this.id != id) {
+            subtasksByEpic.add(id);
+        }
     }
 
     @Override
